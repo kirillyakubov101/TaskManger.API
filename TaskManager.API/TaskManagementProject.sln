@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "..\Infras
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{D28AE56A-646E-4991-AE7E-F540A82C6231}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedModels", "..\..\SharedModels\SharedModels\SharedModels.csproj", "{5F92E4E3-CF06-41D0-8145-FF3AE78CC0C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedModels", "..\..\..\SharedModels\SharedModels\SharedModels.csproj", "{021C1D79-F172-4828-A25A-60C3CEE137DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,15 +37,15 @@ Global
 		{315585BA-A447-4BF1-AB01-77262A1D28CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{315585BA-A447-4BF1-AB01-77262A1D28CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{315585BA-A447-4BF1-AB01-77262A1D28CB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5F92E4E3-CF06-41D0-8145-FF3AE78CC0C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F92E4E3-CF06-41D0-8145-FF3AE78CC0C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F92E4E3-CF06-41D0-8145-FF3AE78CC0C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F92E4E3-CF06-41D0-8145-FF3AE78CC0C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{021C1D79-F172-4828-A25A-60C3CEE137DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{021C1D79-F172-4828-A25A-60C3CEE137DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{021C1D79-F172-4828-A25A-60C3CEE137DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{021C1D79-F172-4828-A25A-60C3CEE137DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5F92E4E3-CF06-41D0-8145-FF3AE78CC0C4} = {D28AE56A-646E-4991-AE7E-F540A82C6231}
+		{021C1D79-F172-4828-A25A-60C3CEE137DD} = {D28AE56A-646E-4991-AE7E-F540A82C6231}
 	EndGlobalSection
 EndGlobal
