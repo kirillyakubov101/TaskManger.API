@@ -1,0 +1,6 @@
+[submodule "TaskManager.API/TaskManager.SharedModels"]
+	path = TaskManager.API/TaskManager.SharedModels
+	url = https://github.com/kirillyakubov101/TaskManager.SharedModels.git
+[submodule "TaskManager.SharedModels"]
+	path = TaskManager.SharedModels
+	url = https://github.com/kirillyakubov101/TaskManager.SharedModels.git
