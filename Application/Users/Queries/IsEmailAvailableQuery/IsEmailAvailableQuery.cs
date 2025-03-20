@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Application.Users.Queries;
+namespace Application.Users.Queries.IsEmailAvailableQuery;
 
 public class IsEmailAvailableQuery : IRequest<bool>
 {

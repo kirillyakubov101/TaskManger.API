@@ -2,7 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 
-namespace Application.Users.Queries;
+namespace Application.Users.Queries.IsEmailAvailableQuery;
 
 public class IsEmailAvailableQueryHandler(UserManager<MainUser> _userManager) : IRequestHandler<IsEmailAvailableQuery, bool>
 {
