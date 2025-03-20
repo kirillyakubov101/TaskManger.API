@@ -1,13 +1,14 @@
 ﻿using Domain.Entities.User;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using SharedModels;
 using System.Security.Claims;
 
 namespace Application.Users.Queries.GetCurrentUserInfoQuery;
 
-public class GetCurrentUserInfoQueryHandler(UserManager<MainUser> userManager) : IRequestHandler<GetCurrentUserInfoQuery>
+public class GetCurrentUserInfoQueryHandler(UserManager<MainUser> userManager) : IRequestHandler<GetCurrentUserInfoQuery, UserInfoDto>
 {
-    public async Task Handle(GetCurrentUserInfoQuery request, CancellationToken cancellationToken)
+    public async Task<UserInfoDto> Handle(GetCurrentUserInfoQuery request, CancellationToken cancellationToken)
     {
         var userId = request.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
@@ -15,9 +16,17 @@ public class GetCurrentUserInfoQueryHandler(UserManager<MainUser> userManager) :
         {
             throw new UnauthorizedAccessException("Invalid Token");
         }
-            
+
         var user = await userManager.FindByIdAsync(userId);
 
-         
+        if(user == null)
+        {
+            throw new Exception("Invalid user");
+        }
+
+        return new UserInfoDto
+        {
+            UserNickname = user.NickName!
+        };
     }
 }

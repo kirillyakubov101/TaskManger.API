@@ -1,8 +1,10 @@
 ﻿using Application.Users.Commands.CreateNewUserCommand;
 using Application.Users.Commands.SendTokenToEmailCommand;
+using Application.Users.Queries.GetCurrentUserInfoQuery;
 using Application.Users.Queries.IsEmailAvailableQuery;
 using Domain.Entities.User;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -50,22 +52,15 @@ namespace TaskManagmentAPI.Controllers
             }
         }
 
-        [HttpGet("me")]
+        [HttpGet("GetCurrentUser")]
+        [Authorize]
         public async Task<IActionResult> GetCurrentUser()
         {
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var query = new GetCurrentUserInfoQuery(User);
+            var userInfo = await mediator.Send(query);
 
-            if (userId == null)
-                return Unauthorized("Invalid Token");
-
-            var user = await userManager.FindByIdAsync(userId);
-            if (user == null)
-                return NotFound("User not found");
-
-            return Ok(new
-            {
-                Nickname = user.NickName // Assuming this property exists
-            });
+            return Ok(userInfo);
+            
         }
     }
 }

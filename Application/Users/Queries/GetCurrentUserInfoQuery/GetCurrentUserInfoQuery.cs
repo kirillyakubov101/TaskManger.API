@@ -1,9 +1,10 @@
 ﻿using MediatR;
+using SharedModels;
 using System.Security.Claims;
 
 namespace Application.Users.Queries.GetCurrentUserInfoQuery;
 
-public class GetCurrentUserInfoQuery : IRequest
+public class GetCurrentUserInfoQuery : IRequest<UserInfoDto>
 {
     public GetCurrentUserInfoQuery(ClaimsPrincipal user)
     {
